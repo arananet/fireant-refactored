@@ -1,6 +1,6 @@
 # Support
 
-Thanks for using `{{PROJECT_NAME}}`. Here's where to go for help.
+Thanks for using `fireant-refactored`. Here's where to go for help.
 
 ## Quick Triage
 
@@ -36,8 +36,8 @@ This project is maintained on a best-effort basis. Typical response windows:
 
 ## Commercial Support
 
-Not currently offered. For project-specific consulting, contact
-`{{SECURITY_CONTACT}}`.
+Not currently offered. Public project questions can be directed to
+[arananet](https://github.com/arananet); do not include private or security details.
 
 ## Funding
 

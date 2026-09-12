@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `{{PROJECT_NAME}}` will be documented in this file.
+All notable changes to `fireant-refactored` will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -23,11 +23,17 @@ Guidelines:
 
 ### Added
 
+- Playable Fire Ant browser reimagining: eight chambers, queen rescue, scorpion
+  patrols, pebble crossings, keys, hazards, scoring, touch controls, original 3D
+  scenery and chiptunes, plus simulation and browser tests (spec: fire-ant-browser).
 - Shared local/CI Markdown lint runner with locked dependencies, `make setup-lint`, `make lint-markdown`, and `make verify-template` (spec: lean-agent-workflow).
 - Persistent verification evidence, stale-state detection, pause/resume and optional bounded local agent adapters (spec: reliable-verification-and-resumable-execution).
 
 ### Changed
 
+- Adopted the template as arananet/fireant-refactored with confirmed metadata,
+  personal CODEOWNERS, game documentation, and template-spec cleanup
+  (spec: fire-ant-browser). Existing review and security controls remain intact.
 - README starts with one minimal adoption path; agent check and auto-fix instructions follow the shared CLI and readiness contract (spec: lean-agent-workflow).
 - Markdown lint uses CLI 0.23.2 with a patched TOML parser; table spacing follows its new default rule without changing security policies (spec: lean-agent-workflow).
 - CLI, hooks and deterministic CI share a Ruby standard-library YAML engine; Ruby >= 2.6 is now required. `make test name=<slug>` verifies the selected spec.
@@ -71,4 +77,4 @@ Commits: `0a92a2d`, `035a861`, `5adbfbe`.
 
 - Initial repository commit (`d07225a`). No tagged release date is recorded in the local Git history.
 
-[Unreleased]: https://github.com/{{GITHUB_OWNER}}/{{PROJECT_NAME}}/commits/HEAD
+[Unreleased]: https://github.com/arananet/fireant-refactored/commits/HEAD

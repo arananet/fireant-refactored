@@ -1,11 +1,11 @@
 {
-  "name": "{{PROJECT_NAME}}",
+  "name": "fireant-refactored",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
 
   // Runs once when the Codespace or Dev Container is first created.
   // Installs git hooks and makes scripts/openspec executable.
   // No external dependencies — bash + coreutils + git only.
-  "postCreateCommand": "bash setup.sh",
+  "postCreateCommand": "bash setup.sh && npm ci",
 
   "customizations": {
     "vscode": {
@@ -22,6 +22,7 @@
   },
 
   "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "22" },
     "ghcr.io/devcontainers/features/github-cli:1": {}
   }
 }

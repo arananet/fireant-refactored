@@ -72,6 +72,8 @@ dist/
 build/
 out/
 coverage/
+test-results/
+playwright-report/
 *.tsbuildinfo
 .tscache/
 
@@ -184,3 +186,5 @@ terraform.rc
 # ─── OpenSpec local state ──────────────────────────────────────────────────
 .openspec/.cache/
 .openspec/local.yaml
+
+/stuff/

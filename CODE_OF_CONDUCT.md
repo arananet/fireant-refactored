@@ -14,10 +14,11 @@ channels operated by the project.
 
 ## Enforcement
 
-Reports of unacceptable behavior can be sent to the project maintainers at
-`{{SECURITY_CONTACT}}`. All reports are reviewed and investigated promptly
-and fairly. Maintainers are obligated to respect the privacy and security of
-the reporter of any incident.
+The project maintainer is [arananet](https://github.com/arananet). A dedicated
+private conduct-reporting address has not yet been configured. Request a private
+channel without disclosing incident details publicly, or use GitHub's reporting
+tools for platform abuse. Maintainers are obligated to respect the privacy and
+security of reporters and investigate reports fairly.
 
 Enforcement follows the Community Impact Guidelines published with the
 Contributor Covenant v2.1.

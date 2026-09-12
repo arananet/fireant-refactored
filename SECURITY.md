@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Security fixes are applied to the latest release line of `{{PROJECT_NAME}}`.
+Security fixes are applied to the latest release line of `fireant-refactored`.
 Older releases receive fixes only when explicitly flagged in the
 [CHANGELOG](CHANGELOG.md).
 
@@ -15,13 +15,19 @@ Older releases receive fixes only when explicitly flagged in the
 
 **Please do not open a public GitHub issue for security vulnerabilities.**
 
-Report vulnerabilities privately through one of these channels, in order of
-preference:
+Use [GitHub Private Vulnerability Reporting](https://github.com/arananet/fireant-refactored/security/advisories/new).
+The repository owner must verify that this feature is enabled. This local setup
+does not change GitHub settings, and no security email or PGP key is configured.
+If reporting is unavailable, request a private reporting channel from
+[arananet](https://github.com/arananet) without posting vulnerability details.
 
-1. **GitHub Private Vulnerability Reporting** — open the repository's
-   **Security** tab and click **Report a vulnerability**.
-2. **Email** — send details to `{{SECURITY_CONTACT}}`. Encrypt with the
-   project's PGP key if the report contains exploit details.
+### Development dependencies
+
+Use Node 22 or a newer supported LTS release with the locked dependencies.
+Vitest is patched to 4.1.11 for GHSA-82fw-gwwq-j7x9. Tests use `vitest run`;
+do not expose a development or test server to an untrusted network. Development
+dependencies are not included in the browser bundle. Run `npm audit` regularly;
+a clean dependency audit is not a security review of the game.
 
 ### What to include
 

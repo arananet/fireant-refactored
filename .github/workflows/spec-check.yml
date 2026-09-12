@@ -53,6 +53,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up Node
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install game dependencies
+        run: npm ci
+
       - name: Verify with the shared CLI
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
@@ -66,6 +75,15 @@ jobs:
             if [[ -n "$BASE_SHA" ]]; then args+=(--base "$BASE_SHA"); fi
             bash scripts/openspec "${args[@]}"
           fi
+
+      - name: Build browser game
+        run: npm run build
+
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Test desktop and mobile gameplay
+        run: npm run test:e2e
 
       - name: Retain verification reports
         if: always()

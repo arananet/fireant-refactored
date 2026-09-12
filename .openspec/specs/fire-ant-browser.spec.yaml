@@ -1,0 +1,74 @@
+---
+title: Fire Ant Browser
+slug: fire-ant-browser
+type: feature
+status: review
+author: Arananet
+created_at: '2026-09-13'
+updated_at: '2026-09-13'
+roles:
+  implementer:
+  reviewer:
+  qa:
+  product_owner:
+description: |
+  Reimagine the 1983 Fire Ant underground collect-and-escape game as a complete
+  single-player browser experience, with original 2.5D Three.js artwork and
+  original Web Audio chiptunes. Adopt this repository as fireant-refactored,
+  individually owned by arananet. Scope and onboarding settings were confirmed
+  by the user on 2026-09-13. The supplied tape is reference-only and is not
+  redistributed; this is not a claim of exact mechanical or level fidelity.
+  Subsequent user-provided instructions establish eight chambers, a queen rescue,
+  scorpions and object-triggered passage clearing. These refine the provisional
+  three-chamber objective. The local C64 PRG is also reference-only.
+acceptance_criteria:
+- A new player can start immediately from the game screen on desktop or mobile.
+- Eight completable chambers contain tunnels, pebbles, keys, gates and scorpions.
+  Depositing pebbles fills a water gap and clears a passage; keys open gates.
+  Rescue the queen before her vitality expires, then optionally enter a new colony.
+- Keyboard and touch movement, a defensive action, pause, resume and mute work.
+- Collisions cost lives with temporary invulnerability; losing all lives produces
+  game over, and completing all chambers produces victory. Both allow a fresh run.
+- Score and local best score are visible; unavailable storage does not block play.
+- Original animated 3D insects and tunnel geometry render in a readable cutaway
+  on desktop and mobile, with no blank canvas or overlapping controls.
+- Original chiptune music starts only after user interaction; mute and pause
+  silence it, with no external audio or ROM assets needed at runtime.
+- Confirmed project placeholders are replaced, template-internal specs removed,
+  and documentation explains running, playing, testing and reference limitations.
+  README includes desktop and mobile screenshots captured from the running game.
+  Original C64 programmer, publisher and release year are credited separately
+  from the browser reimagining, using the supplied release metadata.
+test_plan:
+- Vitest covers movement and wall collision, collectible and gate state, enemy
+  damage and invulnerability, hazards, pause, restart, progression and victory.
+- Automated route tests complete every authored chamber through gameplay actions.
+- TypeScript typecheck and Vite production build must pass.
+- Playwright desktop and mobile tests exercise actual controls and lifecycle,
+  inspect WebGL canvas pixels, capture screenshots and check runtime errors.
+- Confirm the README screenshot paths resolve to tracked documentation assets
+  and the Markdown lint passes.
+- Check original-game credits against the supplied C64 release notes without
+  inventing unlisted contributors or implying endorsement.
+- Run OpenSpec check, verify fire-ant-browser and inspect its recorded status.
+qa_notes: |
+  Listening quality is subjective and requires human confirmation. Automated
+  checks verify audio graph activity and mute/pause state, not perceived quality.
+  The supplied T64 and PRG are packed; user-provided instruction and gameplay
+  screenshots establish the original objective. Exact map and puzzle fidelity
+  is not claimed. All browser assets and music are original.
+  GitHub private vulnerability reporting must be enabled by the owner; no email
+  or remote security configuration is fabricated. No paid services are enabled.
+out_of_scope:
+- ROM emulation, extracted copyrighted artwork/music, and exact original maps.
+- Multiplayer, accounts, cloud services, deployment, paid generation and analytics.
+implementation_skill:
+eval_plan:
+  scenarios: []
+  metrics: []
+technical_notes: |
+  TypeScript, Vite, Three.js, Web Audio, Vitest and Playwright. Use an established
+  pathfinding library for enemy routing. Keep gameplay simulation independent
+  from rendering for deterministic tests. Preserve the existing .gitignore edits.
+linked_issues: []
+linked_prs: []

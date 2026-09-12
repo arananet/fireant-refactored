@@ -43,6 +43,15 @@ puts 'PASS: workflow opt-in, opt-out, missing setting, and disabled cost guard'
 Dir.glob(File.join(root, '.github/workflows/*.yml')).each { |path| YAML.load_file(path) }
 puts 'PASS: workflow YAML parses'
 
+game_workflow = YAML.load_file(File.join(root, '.github/workflows/spec-check.yml'))
+game_steps = game_workflow.fetch('jobs').fetch('run-tests').fetch('steps')
+install_index = game_steps.index { |step| step['run'] == 'npm ci' }
+verify_index = game_steps.index { |step| step['name'] == 'Verify with the shared CLI' }
+raise 'game dependencies must be installed before verification' unless install_index && install_index < verify_index
+raise 'game build missing from CI' unless game_steps.any? { |step| step['run'] == 'npm run build' }
+raise 'game browser tests missing from CI' unless game_steps.any? { |step| step['run'] == 'npm run test:e2e' }
+puts 'PASS: game CI installs dependencies before verification and tests the browser build'
+
 lint_workflow = YAML.load_file(File.join(root, '.github/workflows/lint.yml'))
 markdown_steps = lint_workflow.fetch('jobs').fetch('markdownlint').fetch('steps')
 raise 'CI must use the shared lint target' unless markdown_steps.any? { |step| step['run'] == 'make lint-markdown' }
